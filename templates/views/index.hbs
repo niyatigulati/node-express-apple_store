@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>{{title}}</title>
+    <link rel="icon" href="/img/apple.png">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+    </style>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Complete Bootstrap 4 Website Layout</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-auth.js"></script>
+     
+     <nav class="navbar navbar-expand-md navbar-light bg-grey sticky-top">
+	<div class="container-fluid">
+		
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarResponsive">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+                <button id="log" class="btn" style="color:black;font-size:22px;border:4px solid black">Log Out</button>
+				</li>
+		</div>
+	</div>
+</nav>
+
+    <div class= "text-center">
+            <center>
+            <div class="row text-center mb-2">
+                <div class="col">
+            <h2 style="font-family: 'Poppins', serif;color:white;">{{>header}}</h2>
+            </div>
+            </div>
+            </center>
+        
+    <div class="row text-left">
+                       
+        <div class="col-md-4 col-lg-4 col-xl-4"></div>
+        <div class="col-md-4 col-lg-4 col-xl-4 ">
+            <form id="contact" action="" method="post">
+            <label style="color:blanchedalmond">Location</label>
+                <input placeholder="Location"  class="w3-input" onkeyup="myfunction()" type="text"id="Location" style="border-radius: 20px;">
+        
+               {{!--  <h2>Inventories</h2> --}}
+               <label style="color:blanchedalmond">IPhone</label>
+                <input placeholder="iphone"class="w3-input" type="text"  id="iphone" style="border-radius: 20px;"><br>
+                <label style="color:blanchedalmond">IPad</label>
+                <input placeholder="ipad" class="w3-input" type="text" id="ipad" style="border-radius: 20px;"><br>
+                <label style="color:blanchedalmond">Macbook</label>
+                <input placeholder="macbook" class="w3-input" type="text" id="mac" style="border-radius: 20px;"><br>
+            
+                <button style="border:2px white; border-radius:10px;" name="submit" type="submit" id="contact-submit">Save</button>
+            </form>
+            
+
+        <div class="row text-center">
+            <div class="full col-lg-6 col-12"> 
+            <button style="border-bottom: blanchedalmond;border-radius:10px;" id="update">Update</button>
+            </div>
+            <div class="full col-lg-6 col-12">
+            <button style="border-bottom: blanchedalmond;border-radius:10px;"id="delete">Delete</button>
+            </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 col-lg-4 col-xl-4"></div>
+        
+       
+
+
+
+        <div id="myModal" class="modal">
+        <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Data is Updated</p>
+            </div>
+
+        </div>
+
+
+
+         <div id="myModal1" class="modal1">
+        <!-- Modal content -->
+            <div class="modal-content1">
+                <span class="close1">&times;</span>
+                <p>Data is Deleted</p>
+            </div>
+
+        </div>
+
+        <div id="myModal2" class="modal2">
+        <!-- Modal content -->
+            <div class="modal-content2">
+                <span class="close2">&times;</span>
+                <p>Data is Saved</p>
+            </div>
+
+        </div>
+
+       
+        </div>    
+<br>
+<br>
+<div class="container">
+            <table class="table table-dark table-striped" id="myTable">
+                <tbody>
+                    <tr class="header table-dark">
+                        <th style="width:20%;" ><strong>Location</strong></th>
+                        <th style="width:20%;"><strong>Iphone</strong></th>
+                        <th style="width:20%;"><strong>Ipad</strong></th>
+                        <th style="width:20%;"><strong>Macbook</strong></th>
+                    </tr>
+                </tbody>
+                <tbody id="data">
+
+                </tbody>
+            </table>
+        </div>
+
+
+       
+
+   
+
+    <script src="/js/index.js"></script>
+    
+
+
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Remove</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+  <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+    <div class="main-content">
+        {{>header}}
+        <p>{{helpText}}</p>
+        <input type="text" id="loc2"><br>
+        <button type="button" onclick="removeData()">Remove Data</button>
+    </div>
+    
+    {{>footer}}
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

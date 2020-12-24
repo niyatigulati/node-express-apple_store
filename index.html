@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Apple Store</title>
+</head>
+
+<body>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+
+
+
+    <!-- <h1>User Database</h1>
+        <input type="text" placeholder="name" id="namefield">
+        <input type="text" placeholder="age" id="agefield">
+        <button onclick="writedata()">Submit</button> -->
+
+    <div class="container">
+    </div>
+
+    <form id="contact" action="" method="post">
+        <h1>Apple Store</h1>
+        <fieldset>
+            <input placeholder="Location" type="text" required autofocus id="Location">
+        </fieldset>
+        <br>
+        <br>
+        <h2>Inventories</h2>
+        <input placeholder="iphone" type="text" id="iphone"><br>
+        <input placeholder="ipad" type="text" id="ipad"><br>
+        <input placeholder="macbook" type="text" id="mac"><br>
+        <br>
+        <br>
+        <button class="btn waves-effect waves-light" name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+
+    </form>
+    </div>
+
+    <h3>enter the location to get data</h3>
+    <input type="text" id="loc"><br>
+    <button type="button" onclick="getdata()">getdata</button>
+
+    <center>
+        <p>Iphone: <strong id="iphone"></strong></p>
+        <p>Ipad: <strong id="ipad"></strong></p>
+        <p>Macbooks: <strong id="macbooks">    </strong> </p>
+    </center>
+
+
+    <script src="/index.js"></script>
+
+</body>
+
+</html>

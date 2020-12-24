@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>About Company</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+      <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-analytics.js"></script>
+
+    
+    <div class="main-content">
+        {{>header}}
+        <div class="about">
+            <pre id='object'> </pre>
+        </div>    
+
+<div>
+            <table>
+                <tbody>
+                    <tr>
+                        <th ><strong>Location</strong></th>
+                        <th ><strong>Iphone</strong></th>
+                        <th ><strong>Ipad</strong></th>
+                        <th ><strong>Macbooks</strong></th>
+                    </tr>
+                </tbody>
+                 <tbody id="data">
+
+                  </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+    
+    {{>footer}}
+  
+    <script>
+        console.log('javascript file is loaded!!!')
+// Your web app's Firebase configuration
+var firebaseConfig = {
+        apiKey: "AIzaSyAE0yJXWqkrYc7-4dTBalw0W7QnoDATdqk",
+        authDomain: "fir-form-ae3ad.firebaseapp.com",
+        databaseURL: "https://fir-form-ae3ad.firebaseio.com",
+        projectId: "fir-form-ae3ad",
+        storageBucket: "fir-form-ae3ad.appspot.com",
+        messagingSenderId: "455755025639",
+        appId: "1:455755025639:web:55fdf9bfd3792d6576a642",
+        measurementId: "G-HLXYBMNV95"
+
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
+
+        //create refernces
+    database = firebase.database()
+    var ref = database.ref("AppleStores")
+    
+    let i = 0;
+    //sync object changes
+    ref.on('value', gotData, errData)
+     
+    function gotData(data){
+
+const preobject = document.getElementById('object')
+    
+    
+    //preobject.innerText = JSON.stringify(data, null, 3)
+    
+    var temp = ''
+
+    data.forEach(function(childSnapshot) {
+        var childData = childSnapshot.val();
+
+        console.log(childData.Location)
+
+
+                temp+='<tr>'
+                temp+='<td>'+childData.Location+'</td>'
+                temp+='<td>'+childData.Inventories.iphone+'</td>'
+                temp+='<td>'+childData.Inventories.ipad+'</td>'
+                temp+='<td>'+childData.Inventories.macbooks+'</td>'
+
+        
+document.getElementById('data').innerHTML = temp
+    });
+    
+    
+
+    }
+
+    function errData(err){
+        console.log('error!')
+        console.log(err)
+    }
+
+   
+
+    </script>
+</body>
+
+</html>
+
